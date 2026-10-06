@@ -662,16 +662,24 @@ em, .italic { font-style: italic; }
   -webkit-overflow-scrolling: touch;
   padding-block: 1rem 2.5rem;
 }
-@media (min-width: 960px) {
-  .carta-track-wrap { overflow-x: hidden; }
+.carta-track-wrap { scrollbar-width: none; }
+.carta-track-wrap::-webkit-scrollbar { display: none; }
+.carta-arrow {
+  width: 2.8rem; height: 2.8rem; border-radius: 50%;
+  border: 1px solid rgba(246,241,231,0.35);
+  background: transparent; color: var(--bg);
+  font-size: 1.2rem; cursor: pointer;
+  transition: background .3s, color .3s, border-color .3s, opacity .3s;
 }
+.carta-arrow:hover:not(:disabled) { background: var(--dorado); color: var(--ink); border-color: var(--dorado); }
+.carta-arrow:disabled { opacity: .3; cursor: default; }
 .carta-track {
   display: flex;
   gap: 1.4rem;
   width: max-content;
 }
 .dish-card {
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   width: min(84vw, 380px);
   flex-shrink: 0;
   background: rgba(246,241,231,0.04);

@@ -259,70 +259,42 @@
     });
   }
 
-  /* ---------------- La Carta: progress + pinned horizontal scroll ---------------- */
-  function updateCartaProgress(progress) {
-    var fill = $("[data-carta-progress-fill]");
-    var label = $("[data-carta-progress-label]");
-    var total = (data.dishes && data.dishes.length) || 10;
-    if (fill) fill.style.width = (progress * 100).toFixed(1) + "%";
-    if (label) {
-      var current = Math.min(total, Math.max(1, Math.round(progress * (total - 1)) + 1));
-      label.textContent = String(current).padStart(2, "0") + " / " + String(total).padStart(2, "0");
-    }
-  }
-
+  /* ---------------- La Carta: progreso + botones ---------------- */
+  // Carrusel de la carta: se avanza con los botones ← → (o deslizando en el móvil).
+  // La rueda del ratón baja la página con normalidad, sin quedarse atrapada en el carrusel.
   function initCartaScroll() {
-    var section = $("[data-carta-pin]");
-    var trackWrap = $(".carta-track-wrap");
+    var wrap = $(".carta-track-wrap");
     var track = $("[data-dishes]");
-    if (!section || !trackWrap || !track) return;
+    var prev = $("[data-carta-prev]");
+    var next = $("[data-carta-next]");
+    if (!wrap || !track) return;
 
-    var mq = matchMedia("(min-width: 960px)");
-    var st = null;
-
-    function teardown() {
-      if (st) { st.kill(); st = null; }
-      if (window.gsap) gsap.set(track, { clearProps: "x" });
+    function step() {
+      var card = track.querySelector(".dish-card");
+      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : 400;
+    }
+    function go(dir) {
+      wrap.scrollBy({ left: dir * step(), behavior: reduced ? "auto" : "smooth" });
+    }
+    function update() {
+      var max = wrap.scrollWidth - wrap.clientWidth;
+      var total = track.children.length;
+      // Número del primer plato visible (al llegar al final, el último)
+      var current = wrap.scrollLeft >= max - 2 ? total : Math.round(wrap.scrollLeft / step()) + 1;
+      var fill = $("[data-carta-progress-fill]");
+      var label = $("[data-carta-progress-label]");
+      if (fill) fill.style.width = (total ? current / total * 100 : 0).toFixed(1) + "%";
+      if (label) label.textContent = String(current).padStart(2, "0") + " / " + String(total).padStart(2, "0");
+      if (prev) prev.disabled = wrap.scrollLeft <= 2;
+      if (next) next.disabled = wrap.scrollLeft >= max - 2;
     }
 
-    function buildDesktop() {
-      teardown();
-      if (!window.gsap || !window.ScrollTrigger) return;
-      var distance = track.scrollWidth - trackWrap.clientWidth;
-      if (distance <= 40) return;
-      st = ScrollTrigger.create({
-        trigger: section,
-        start: "top top",
-        end: function () { return "+=" + (distance + window.innerHeight * 0.5); },
-        pin: true,
-        scrub: 0.6,
-        onUpdate: function (self) {
-          gsap.set(track, { x: -distance * self.progress });
-          updateCartaProgress(self.progress);
-        }
-      });
-    }
-
-    function setup() {
-      if (mq.matches) {
-        buildDesktop();
-      } else {
-        teardown();
-        trackWrap.addEventListener("scroll", onMobileScroll, { passive: true });
-      }
-    }
-
-    function onMobileScroll() {
-      var max = track.scrollWidth - trackWrap.clientWidth;
-      if (max <= 0) return;
-      updateCartaProgress(trackWrap.scrollLeft / max);
-    }
-
-    setup();
-    updateCartaProgress(0);
-    window.addEventListener("resize", function () {
-      safe(setup, "cartaScrollResize");
-    });
+    if (prev) prev.addEventListener("click", function () { go(-1); });
+    if (next) next.addEventListener("click", function () { go(1); });
+    wrap.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
   }
 
   /* ---------------- Reserva form -> WhatsApp ---------------- */
@@ -366,12 +338,7 @@
     safe(initTilt, "initTilt");
     safe(initReservaForm, "initReservaForm");
 
-    if (window.gsap && window.ScrollTrigger) {
-      try { gsap.registerPlugin(ScrollTrigger); } catch (_) {}
-      safe(initCartaScroll, "initCartaScroll");
-    } else {
-      updateCartaProgress(0);
-    }
+    safe(initCartaScroll, "initCartaScroll");
 
     document.documentElement.classList.add("is-ready");
   }

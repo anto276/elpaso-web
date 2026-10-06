@@ -171,7 +171,7 @@
     </section>
 
     <!-- 02 La Carta -->
-    <section class="section section-carta" id="carta" data-carta-pin>
+    <section class="section section-carta" id="carta">
       <div class="container">
         <div class="carta-head">
           <div>
@@ -194,6 +194,8 @@
           <div class="carta-progress">
             <span data-carta-progress-label>01 / 10</span>
             <span class="carta-progress-bar"><span class="carta-progress-fill" data-carta-progress-fill></span></span>
+            <button class="carta-arrow" type="button" data-carta-prev aria-label="Plato anterior">&larr;</button>
+            <button class="carta-arrow" type="button" data-carta-next aria-label="Plato siguiente">&rarr;</button>
           </div>
         </div>
 
@@ -388,8 +390,6 @@
     </div>
   </footer>
 
-  <script defer src="lib/gsap.min.js?v=20261006"></script>
-  <script defer src="lib/ScrollTrigger.min.js?v=20261006"></script>
   <script defer src="lib/manifest.js?v=20261006"></script>
   <script defer src="main.js?v=20261006"></script>
 </body>
