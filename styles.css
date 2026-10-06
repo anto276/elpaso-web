@@ -538,24 +538,29 @@ em, .italic { font-style: italic; }
   line-height: 1;
 }
 
+/* Tres fotos en fila, sin solaparse. Al pasar el ratón se agrandan (main.js → initTilt). */
 .local-collage {
   position: relative;
-  height: clamp(320px, 42vw, 460px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(.6rem, 1.6vw, 1.2rem);
+  align-items: center;
+  padding-block: 2.5rem;
 }
 .collage-photo {
-  position: absolute;
-  border-radius: 16px;
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 4 / 5; /* igual que la foto original: no recorta el plato */
+  border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 30px 60px -24px rgba(46,54,38,0.4);
   transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out);
 }
 .collage-photo img { width: 100%; height: 100%; object-fit: cover; }
-.collage-photo:hover { transform: translateY(-8px) rotate(0deg) !important; box-shadow: 0 40px 74px -22px rgba(46,54,38,0.5); }
-/* aspect-ratio: 4/5 matches the source photo export exactly (see tools/process_photos.py)
-   so object-fit:cover never has to crop further and cut into a plate. */
-.collage-1 { width: 54%; aspect-ratio: 4 / 5; left: 0; top: 4%; transform: rotate(-4deg); z-index: 3; }
-.collage-2 { width: 42%; aspect-ratio: 4 / 5; right: 2%; top: 0; transform: rotate(5deg); z-index: 2; }
-.collage-3 { width: 38%; aspect-ratio: 4 / 5; right: 10%; bottom: -4%; transform: rotate(-3deg); z-index: 4; }
+.collage-photo:hover { z-index: 6; box-shadow: 0 40px 80px -20px rgba(46,54,38,0.55); }
+.collage-1 { transform: translateY(-1.2rem) rotate(-3deg); transform-origin: left center; }
+.collage-2 { transform: translateY(1.2rem) rotate(2deg); transform-origin: center; }
+.collage-3 { transform: translateY(-.4rem) rotate(-2deg); transform-origin: right center; }
 
 .local-ribbon {
   position: absolute; top: 6%; left: -8%;
@@ -613,6 +618,20 @@ em, .italic { font-style: italic; }
 }
 .carta-head .eyebrow { color: var(--dorado); }
 .carta-head h2 { color: var(--bg); }
+.carta-title { font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1.02; }
+.menu-banner {
+  margin-top: 1.6rem;
+  max-width: 44rem;
+  padding: 1.3rem 1.5rem;
+  border: 1px solid var(--dorado);
+  border-radius: 16px;
+  background: rgba(246,241,231,0.05);
+}
+.menu-banner-price { font-family: var(--display); font-size: clamp(1.5rem, 3.2vw, 2.1rem); color: var(--bg); }
+.menu-banner-price strong { color: var(--dorado); }
+.menu-banner-what { font-family: var(--mono); font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; color: rgba(246,241,231,0.7); margin-top: .3rem; }
+.menu-banner-note { margin-top: .9rem; font-size: 1.05rem; color: rgba(246,241,231,0.9); }
+.menu-banner-note strong { color: var(--dorado); }
 .carta-progress {
   font-family: var(--mono); font-size: .82rem; color: rgba(246,241,231,0.7);
   display: flex; align-items: center; gap: .8rem;
@@ -802,11 +821,10 @@ textarea.form-field { resize: vertical; min-height: 90px; }
 .site-footer { background: var(--ink); color: var(--bg); padding-block: clamp(4rem, 8vw, 7rem) 2.5rem; overflow: hidden; }
 .footer-display {
   font-family: var(--display); font-style: italic;
-  font-size: clamp(2.6rem, 9vw, 6.5rem);
-  white-space: nowrap;
-  color: rgba(246,241,231,0.12);
+  font-size: clamp(2rem, 6.5vw, 5.2rem);
+  line-height: 1.05;
+  color: rgba(246,241,231,0.14);
   margin-bottom: 3.5rem;
-  overflow: hidden;
 }
 .footer-display span { display: inline-block; padding-right: 1.2rem; }
 .footer-grid {
@@ -849,9 +867,6 @@ textarea.form-field { resize: vertical; min-height: 90px; }
   .form-row.split { grid-template-columns: 1fr; }
   .servicio-row { grid-template-columns: auto 1fr; }
   .servicio-num { display: none; }
-  .collage-1 { width: 62%; }
-  .collage-2 { width: 48%; }
-  .collage-3 { width: 42%; }
 }
 
 @media (min-width: 720px) and (max-width: 959px) {

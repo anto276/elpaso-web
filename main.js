@@ -130,7 +130,7 @@
         '<article class="dish-card">' +
           '<div class="dish-photo">' +
             '<img src="' + escHTML(d.photo) + '" alt="' + escHTML(d.name) + '" loading="lazy" decoding="async">' +
-            '<span class="dish-tag acc-' + escHTML(d.accent) + '">' + escHTML(d.series) + '</span>' +
+            '<span class="dish-tag acc-' + escHTML(d.accent) + '">' + escHTML(d.type) + '</span>' +
           '</div>' +
           '<div class="dish-body">' +
             '<p class="dish-subtitle">' + escHTML(d.subtitle) + '</p>' +
@@ -138,8 +138,7 @@
             '<p class="dish-ingredients">' + escHTML(d.ingredients) + '</p>' +
             '<p class="dish-desc">' + escHTML(d.description) + '</p>' +
             '<div class="dish-footer">' +
-              '<span class="eyebrow">' + escHTML(d.type) + '</span>' +
-              '<span class="dish-price">' + escHTML(d.price) + '</span>' +
+              '<span class="eyebrow">Ejemplo · menú del día</span>' +
             '</div>' +
           '</div>' +
         '</article>'
@@ -225,7 +224,11 @@
         var py = (e.clientY - rect.top) / rect.height - 0.5;
         var rx = (py * -6).toFixed(2);
         var ry = (px * 7).toFixed(2);
-        el.style.transform = "rotate(0deg) perspective(900px) rotateX(" + rx + "deg) rotateY(" + ry + "deg)";
+        // Fotos del collage: se agrandan y siguen al ratón
+        var zoom = el.classList.contains("collage-photo")
+          ? "translate(" + (px * 14).toFixed(1) + "px," + (py * 14).toFixed(1) + "px) scale(1.4) "
+          : "";
+        el.style.transform = zoom + "rotate(0deg) perspective(900px) rotateX(" + rx + "deg) rotateY(" + ry + "deg)";
       });
       el.addEventListener("mouseout", function (e) {
         if (el.contains(e.relatedTarget)) return;
