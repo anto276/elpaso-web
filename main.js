@@ -182,6 +182,25 @@
     }).join("");
   }
 
+  // Reseñas: solo nombre, estrellas y texto (sin foto de perfil)
+  function mountResenas() {
+    var target = $("[data-resenas]");
+    var list = (data.reviews || []).filter(function (r) { return r && r.text; });
+    if (!target || !list.length) return;
+    target.innerHTML = list.map(function (r) {
+      var n = Math.max(1, Math.min(5, Number(r.stars) || 5));
+      return (
+        '<figure class="resena-card reveal">' +
+          '<span class="resena-stars" aria-label="' + n + ' de 5 estrellas">' + "★".repeat(n) + "☆".repeat(5 - n) + '</span>' +
+          '<blockquote class="resena-text">“' + escHTML(r.text) + '”</blockquote>' +
+          '<figcaption class="resena-author">' + escHTML(r.name) +
+            (r.when ? ' <span>· ' + escHTML(r.when) + '</span>' : '') +
+          '</figcaption>' +
+        '</figure>'
+      );
+    }).join("");
+  }
+
   /* ---------------- Reveals (IntersectionObserver + safety net) ---------------- */
   function initReveals() {
     var els = $$(".reveal");
@@ -334,6 +353,7 @@
     safe(mountDishes, "mountDishes");
     safe(mountServicios, "mountServicios");
     safe(mountGaleria, "mountGaleria");
+    safe(mountResenas, "mountResenas");
 
     safe(initSplash, "initSplash");
     safe(initNav, "initNav");
