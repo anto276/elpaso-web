@@ -822,6 +822,8 @@ textarea.form-field { resize: vertical; min-height: 90px; }
 .panel-value { font-family: var(--display); font-size: 1.15rem; }
 .panel-value a:hover { color: var(--oliva-dark); }
 
+.galeria-title { font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1.02; }
+
 /* --- Reseñas (07) --- */
 .section-resenas { background: var(--bg); }
 .resenas-head {

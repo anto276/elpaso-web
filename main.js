@@ -125,12 +125,15 @@
   function mountDishes() {
     var target = $("[data-dishes]");
     if (!target || target.children.length > 0 || !data.dishes || !data.dishes.length) return;
+    // Color de la etiqueta según el tipo: todos los segundos en amarillo, todos los primeros en verde
+    var TYPE_ACCENT = { "primer plato": "oliva", "segundo plato": "dorado" };
     target.innerHTML = data.dishes.map(function (d) {
+      var accent = TYPE_ACCENT[String(d.type).toLowerCase()] || "terracota";
       return (
         '<article class="dish-card">' +
           '<div class="dish-photo">' +
             '<img src="' + escHTML(d.photo) + '" alt="' + escHTML(d.name) + '" loading="lazy" decoding="async">' +
-            '<span class="dish-tag acc-' + escHTML(d.accent) + '">' + escHTML(d.type) + '</span>' +
+            '<span class="dish-tag acc-' + accent + '">' + escHTML(d.type) + '</span>' +
           '</div>' +
           '<div class="dish-body">' +
             '<p class="dish-subtitle">' + escHTML(d.subtitle) + '</p>' +
