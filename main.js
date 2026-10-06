@@ -188,10 +188,13 @@
     var list = (data.reviews || []).filter(function (r) { return r && r.text; });
     if (!target || !list.length) return;
     target.innerHTML = list.map(function (r) {
-      var n = Math.max(1, Math.min(5, Number(r.stars) || 5));
+      var n = Math.round(Number(r.stars));
+      var stars = n >= 1 && n <= 5
+        ? '<span class="resena-stars" aria-label="' + n + ' de 5 estrellas">' + "★".repeat(n) + "☆".repeat(5 - n) + '</span>'
+        : "";
       return (
         '<figure class="resena-card reveal">' +
-          '<span class="resena-stars" aria-label="' + n + ' de 5 estrellas">' + "★".repeat(n) + "☆".repeat(5 - n) + '</span>' +
+          stars +
           '<blockquote class="resena-text">“' + escHTML(r.text) + '”</blockquote>' +
           '<figcaption class="resena-author">' + escHTML(r.name) +
             (r.when ? ' <span>· ' + escHTML(r.when) + '</span>' : '') +
