@@ -627,8 +627,12 @@ em, .italic { font-style: italic; }
   border-radius: 16px;
   background: rgba(246,241,231,0.05);
 }
-.menu-banner-price { font-family: var(--display); font-size: clamp(1.5rem, 3.2vw, 2.1rem); color: var(--bg); }
-.menu-banner-price strong { color: var(--dorado); }
+.menu-prices { width: 100%; border-collapse: collapse; }
+.menu-prices th, .menu-prices td { padding: .45rem .6rem; text-align: center; }
+.menu-prices thead th { font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(246,241,231,0.6); font-weight: 400; }
+.menu-prices tbody th { text-align: left; padding-left: 0; font-family: var(--display); font-weight: 400; font-size: clamp(1.2rem, 2.6vw, 1.7rem); color: var(--bg); }
+.menu-prices tbody td strong { font-family: var(--display); font-size: clamp(1.4rem, 3vw, 2rem); color: var(--dorado); font-weight: 400; }
+.menu-prices tbody tr + tr { border-top: 1px solid rgba(246,241,231,0.14); }
 .menu-banner-what { font-family: var(--mono); font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; color: rgba(246,241,231,0.7); margin-top: .3rem; }
 .menu-banner-note { margin-top: .9rem; font-size: 1.05rem; color: rgba(246,241,231,0.9); }
 .menu-banner-note strong { color: var(--dorado); }
