@@ -197,8 +197,9 @@ em, .italic { font-style: italic; }
   align-items: center;
   gap: 2rem;
 }
-/* 7 apartados: la barra completa solo cuando caben holgados; si no, menú de tres rayas */
-@media (min-width: 1100px) { .nav-links { display: flex; gap: 1.3rem; } }
+/* 7 apartados: en pantallas medianas se ocultan los números para que quepan */
+@media (min-width: 960px) { .nav-links { display: flex; gap: 1.1rem; } }
+@media (min-width: 960px) and (max-width: 1199px) { .nav-link .num-mark { display: none; } .nav-link { font-size: .88rem; } }
 @media (min-width: 1200px) { .nav-links { gap: 2rem; } }
 .nav-link {
   position: relative;
@@ -224,7 +225,7 @@ em, .italic { font-style: italic; }
   display: flex; flex-direction: column; gap: 5px;
   width: 30px; height: 20px; justify-content: center;
 }
-@media (min-width: 1100px) { .burger { display: none; } }
+@media (min-width: 960px) { .burger { display: none; } }
 .burger span {
   display: block; height: 2px; width: 100%; background: var(--ink);
   transition: transform .4s var(--ease-out), opacity .3s var(--ease-out);
