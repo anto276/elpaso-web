@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=3cfeccd2-3567-47dd-b9f6-1b87ace5396d
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restaurante Café Bar El Paso · Cocina casera en Don Benito</title>
+  <meta name="description" content="Restaurante Café Bar El Paso, cocina casera de toda la vida en Avenida de Madrid 1, Don Benito. Menú del día, comida para llevar y reserva de mesa por WhatsApp.">
+  <meta name="theme-color" content="#F6F1E7">
+
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon.png" sizes="256x256">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..700;1,400..700&family=Manrope:wght@300..800&family=Space+Mono:wght@400;700&display=swap">
+
+  <link rel="preload" as="image" href="assets/img/hero.webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css?v=20260711">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="ambient-gradient" aria-hidden="true"></div>
+
+  <!-- Splash -->
+  <div class="splash" data-splash aria-hidden="true">
+    <div class="splash-word" aria-label="El Paso">
+      <span class="splash-letter" style="animation-delay:.05s">E</span>
+      <span class="splash-letter" style="animation-delay:.1s">l</span>
+      <span class="splash-letter" style="animation-delay:.16s">&nbsp;</span>
+      <span class="splash-letter" style="animation-delay:.22s">P</span>
+      <span class="splash-letter" style="animation-delay:.28s">a</span>
+      <span class="splash-letter" style="animation-delay:.34s">s</span>
+      <span class="splash-letter" style="animation-delay:.4s">o</span>
+    </div>
+    <div class="splash-bar"></div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" data-cursor aria-hidden="true">
+    <div class="cursor-ring" data-cursor-ring>
+      <span class="cursor-label" data-cursor-label></span>
+    </div>
+  </div>
+
+  <!-- Side brand mark -->
+  <div class="side-mark" aria-hidden="true">
+    <span class="dot"></span>
+    <span>ABIERTO · LUN &rarr; SÁB · 7:00 &rarr; 17:00</span>
+  </div>
+
+  <!-- Nav -->
+  <header class="site-nav" data-nav>
+    <div class="container nav-inner">
+      <a href="#main" class="nav-logo">El Paso</a>
+      <nav class="nav-links" aria-label="Secciones">
+        <a class="nav-link" href="#local"><span class="num-mark">01</span>El Local</a>
+        <a class="nav-link" href="#carta"><span class="num-mark">02</span>La Carta</a>
+        <a class="nav-link" href="#servicios"><span class="num-mark">03</span>Cómo comer</a>
+        <a class="nav-link" href="#galeria"><span class="num-mark">04</span>Galería</a>
+        <a class="nav-link" href="#grupos"><span class="num-mark">05</span>Grupos</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary nav-cta" href="#reserva" data-cursor-target="reservar">Reservar</a>
+        <button class="burger" data-burger aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" data-mobile-menu>
+    <ul>
+      <li><a href="#local" data-mobile-link><span class="num-mark">01</span>El Local</a></li>
+      <li><a href="#carta" data-mobile-link><span class="num-mark">02</span>La Carta</a></li>
+      <li><a href="#servicios" data-mobile-link><span class="num-mark">03</span>Cómo comer</a></li>
+      <li><a href="#galeria" data-mobile-link><span class="num-mark">04</span>Galería</a></li>
+      <li><a href="#grupos" data-mobile-link><span class="num-mark">05</span>Grupos</a></li>
+      <li><a href="#reserva" data-mobile-link><span class="num-mark">06</span>Reservar</a></li>
+    </ul>
+  </div>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="assets/img/hero.webp" alt="Costilla de cerdo de campo en salsa estremeña, plato de El Paso, sobre mantel de flores" fetchpriority="high" loading="eager" decoding="sync">
+      </div>
+      <div class="hero-veil" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="hero-kicker">Restaurante · Bar · Comida para llevar &middot; Avenida de Madrid 1 · Don Benito</p>
+        <h1 class="hero-title reveal" data-split>
+          <span class="line-1">Restaurante Café Bar</span>
+          <span class="line-2">El Paso.</span>
+        </h1>
+        <p class="hero-tagline">Cocina de siempre, en el corazón de Don Benito.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#reserva" data-cursor-target="reservar">
+            Reservar mesa <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="btn btn-ghost" href="#carta" data-cursor-target="ver carta">Ver la carta</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">Cocina casera de siempre <span class="sep">·</span></span>
+        <span class="marquee-item">Menú del día <span class="sep">·</span></span>
+        <span class="marquee-item">Comida para llevar <span class="sep">·</span></span>
+        <span class="marquee-item">Avenida de Madrid 1 · Don Benito <span class="sep">·</span></span>
+        <span class="marquee-item">4,4★ en Google <span class="sep">·</span></span>
+        <span class="marquee-item">Reserva tu mesa <span class="sep">·</span></span>
+        <span class="marquee-item">Cocina casera de siempre <span class="sep">·</span></span>
+        <span class="marquee-item">Menú del día <span class="sep">·</span></span>
+        <span class="marquee-item">Comida para llevar <span class="sep">·</span></span>
+        <span class="marquee-item">Avenida de Madrid 1 · Don Benito <span class="sep">·</span></span>
+        <span class="marquee-item">4,4★ en Google <span class="sep">·</span></span>
+        <span class="marquee-item">Reserva tu mesa <span class="sep">·</span></span>
+      </div>
+    </div>
+
+    <!-- 01 El Local -->
+    <section class="section section-local" id="local">
+      <div class="container">
+        <span class="local-watermark" aria-hidden="true">01</span>
+        <div class="local-grid">
+          <div class="local-collage" data-tilt-group>
+            <span class="local-ribbon">De toda la vida · Don Benito</span>
+            <figure class="collage-photo collage-1" data-tilt>
+              <img src="assets/img/local-1.webp" alt="Mesa de El Paso con ensalada de almeja fina recién servida" loading="lazy" decoding="async">
+            </figure>
+            <figure class="collage-photo collage-2" data-tilt>
+              <img src="assets/img/local-2.webp" alt="Tortilla de cebolla caramelizada casera de El Paso" loading="lazy" decoding="async">
+            </figure>
+            <figure class="collage-photo collage-3" data-tilt>
+              <img src="assets/img/local-3.webp" alt="Flamenquines de jamón york y queso de El Paso" loading="lazy" decoding="async">
+            </figure>
+          </div>
+          <div class="local-copy">
+            <span class="local-aside">Barra · Comedor · Para llevar</span>
+            <h2 class="local-title reveal" data-split>Un sitio donde se come <em>como en casa.</em></h2>
+            <p class="lead reveal">Detrás de la barra de siempre y las mesas con mantel de flores, seguimos cocinando como se hacía antes: fuego lento, aceite de oliva y recetas que no han cambiado en años.</p>
+            <p class="reveal" style="margin-top:1rem; color:var(--ink-soft);">Comedor amplio para comidas de familia o de empresa, barra para el aperitivo de antes de comer, y toda la carta lista para llevar a casa cuando no te apetece cocinar.</p>
+            <blockquote class="local-quote reveal">"La mesa siempre puesta, como en casa."</blockquote>
+            <p class="local-meta">Avenida de Madrid, 1 · Don Benito, Badajoz</p>
+            <dl class="def-list">
+              <div class="def-item"><dt>Aforo</dt><dd>40 personas</dd></div>
+              <div class="def-item"><dt>Apertura</dt><dd>Lunes a sábado</dd></div>
+              <div class="def-item"><dt>Horario</dt><dd>7:00 &rarr; 17:00</dd></div>
+              <div class="def-item"><dt>Domingo</dt><dd>Cerrado</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 La Carta -->
+    <section class="section section-carta" id="carta" data-carta-pin>
+      <div class="container">
+        <div class="carta-head">
+          <div>
+            <p class="eyebrow">02 · La Carta</p>
+            <h2 class="reveal" data-split>Especialidades de la casa <em>y menú semanal, que cambia a diario.</em></h2>
+          </div>
+          <div class="carta-progress">
+            <span data-carta-progress-label>01 / 10</span>
+            <span class="carta-progress-bar"><span class="carta-progress-fill" data-carta-progress-fill></span></span>
+          </div>
+        </div>
+
+        <div class="carta-track-wrap">
+          <div class="carta-track" data-dishes></div>
+        </div>
+
+        <noscript>
+          <div class="carta-noscript">
+            <p>Activa JavaScript para ver la carta completa con fotos. Estos son nuestros platos:</p>
+            <ul>
+              <li>Costilla de Cerdo de Campo en Salsa Estremeña — 8€</li>
+              <li>Lomo Ibérico de Matanza Casero — 12€</li>
+              <li>Tortilla de Patatas — 8€</li>
+              <li>Merluza en Escabeche — 10€</li>
+              <li>Ensalada Campera — 5€</li>
+              <li>Gulas a la Gallega — 6€</li>
+              <li>Calabacín Relleno de Atún y Queso — 8€</li>
+              <li>Pimientos Rellenos de Carne — 7€</li>
+              <li>Sardinas Caseras en Escabeche — 7€</li>
+              <li>Muslo de Pollo al Horno — 8€</li>
+            </ul>
+          </div>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- 03 Como comer con nosotros -->
+    <section class="section section-servicios" id="servicios">
+      <div class="container">
+        <p class="eyebrow">03 · Cómo comer con nosotros</p>
+        <h2 class="reveal" data-split style="margin-bottom:2.5rem;">Barra, comedor <em>o para llevar.</em></h2>
+        <div data-servicios></div>
+        <noscript>
+          <div class="carta-noscript">
+            <ul>
+              <li>Menú del día — L a S, 7:00-17:00 — Primero, segundo, postre, pan y bebida por 14€. Cambia cada día, aunque algunos platos se repiten.</li>
+              <li>Para llevar — Pide y recógelo — Toda la carta también lista para llevar a casa.</li>
+              <li>Barra de aperitivos — Antes de comer — Cañas, vino y aperitivos de siempre en la barra.</li>
+              <li>Grupos y reservas — Comedor amplio — Comidas de familia, empresa o celebración hasta 40 personas.</li>
+            </ul>
+          </div>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- 04 Galeria -->
+    <section class="section section-galeria" id="galeria">
+      <div class="container">
+        <p class="eyebrow">04 · Galería</p>
+        <h2 class="reveal" data-split>Cocina de siempre, <em>plato a plato.</em></h2>
+      </div>
+      <div class="galeria-lanes" data-galeria-lanes aria-hidden="true"></div>
+    </section>
+
+    <!-- 05 Grupos y celebraciones -->
+    <section class="section section-grupos" id="grupos">
+      <div class="container">
+        <span class="local-watermark" aria-hidden="true">05</span>
+        <div class="grupos-card tilt-el" data-tilt>
+          <div class="grupos-bg">
+            <img src="assets/img/grupos-bg.webp" alt="Mesa preparada de El Paso para comidas de grupo y celebraciones" loading="lazy" decoding="async">
+          </div>
+          <div class="grupos-veil" aria-hidden="true"></div>
+          <div class="grupos-content">
+            <h2 class="reveal" data-split>Reserva <em>para los tuyos.</em></h2>
+            <p class="reveal">Comidas de familia, de empresa o celebraciones especiales, hasta 40 personas en nuestro comedor. Tú nos dices el día y nosotros ponemos la mesa.</p>
+            <a class="btn btn-primary" href="https://wa.me/34678542278?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20una%20comida%20de%20grupo%20o%20celebraci%C3%B3n%20en%20El%20Paso." target="_blank" rel="noopener" data-cursor-target="whatsapp">
+              Hablamos por WhatsApp <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Reserva -->
+    <section class="section section-reserva" id="reserva">
+      <div class="container">
+        <p class="eyebrow">06 · Reserva</p>
+        <h2 class="reveal" data-split style="margin-bottom:.6rem;">Te guardamos <em>la mesa.</em></h2>
+        <p class="reserva-note reveal" style="margin-bottom:2.5rem;">Reservas hasta las 14:15.</p>
+        <div class="reserva-grid">
+          <form class="reserva-form" data-reserva-form novalidate>
+            <div class="form-row">
+              <label class="form-label" for="f-nombre"><span class="num-mark">01</span>Nombre</label>
+              <input class="form-field" type="text" id="f-nombre" name="nombre" required autocomplete="name" placeholder="Tu nombre">
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="f-telefono"><span class="num-mark">02</span>Teléfono</label>
+              <input class="form-field" type="tel" id="f-telefono" name="telefono" required autocomplete="tel" placeholder="678 000 000">
+            </div>
+            <div class="form-row split">
+              <div>
+                <label class="form-label" for="f-dia"><span class="num-mark">03</span>Día</label>
+                <input class="form-field" type="date" id="f-dia" name="dia" required>
+              </div>
+              <div>
+                <label class="form-label" for="f-hora">Hora (hasta 14:15)</label>
+                <input class="form-field" type="time" id="f-hora" name="hora" required min="12:00" max="14:15" placeholder="14:00">
+              </div>
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="f-personas"><span class="num-mark">04</span>Personas</label>
+              <input class="form-field" type="number" id="f-personas" name="personas" min="1" max="40" required placeholder="2">
+            </div>
+            <div class="form-row">
+              <label class="form-label" for="f-nota"><span class="num-mark">05</span>Nota (opcional)</label>
+              <textarea class="form-field" id="f-nota" name="nota" placeholder="Alguna alergia, silla para bebé, celebración..."></textarea>
+            </div>
+            <button class="btn btn-primary reserva-submit" type="submit" data-cursor-target="enviar">
+              Enviar reserva por WhatsApp <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </button>
+            <p class="reserva-alt">…o más rápido llamando al <a href="tel:+34678542278" data-cursor-target="llamar">678 542 278 &rarr;</a></p>
+          </form>
+
+          <aside class="reserva-panel">
+            <div class="panel-item">
+              <div>
+                <p class="panel-label">Teléfono / WhatsApp</p>
+                <p class="panel-value"><a href="tel:+34678542278" data-cursor-target="llamar">678 542 278</a></p>
+              </div>
+            </div>
+            <div class="panel-item">
+              <div>
+                <p class="panel-label">Instagram</p>
+                <p class="panel-value"><a href="https://instagram.com/elpaso_donbenito" target="_blank" rel="noopener">@elpaso_donbenito</a></p>
+              </div>
+            </div>
+            <div class="panel-item">
+              <div>
+                <p class="panel-label">Dirección</p>
+                <p class="panel-value">Avenida de Madrid, 1 · Don Benito</p>
+              </div>
+            </div>
+            <div class="panel-item">
+              <div>
+                <p class="panel-label">Horario</p>
+                <p class="panel-value">Lun &rarr; Sáb · 7:00 &rarr; 17:00</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-display" aria-hidden="true">
+        <span>El Paso · El Paso · El Paso · El Paso · El Paso ·</span>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Cómo llegar</h3>
+          <p>Avenida de Madrid, 1, Bajo</p>
+          <p>06400 Don Benito, Badajoz</p>
+        </div>
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <a href="tel:+34678542278">678 542 278</a>
+          <a href="https://wa.me/34678542278" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://instagram.com/elpaso_donbenito" target="_blank" rel="noopener">@elpaso_donbenito</a>
+        </div>
+        <div class="footer-col">
+          <h3>Encuéntranos</h3>
+          <div class="footer-map">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-5.8600%2C38.9600%2C-5.8540%2C38.9650&amp;layer=mapnik&amp;marker=38.9625%2C-5.8568" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de El Paso en Don Benito"></iframe>
+          </div>
+          <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&query=Avenida+de+Madrid+1+06400+Don+Benito+Badajoz" target="_blank" rel="noopener">Abrir en Google Maps &rarr;</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Restaurante Café Bar El Paso · Don Benito</span>
+        <a class="back-top" href="#main">&uarr; Volver arriba</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="lib/gsap.min.js?v=20260711"></script>
+  <script defer src="lib/ScrollTrigger.min.js?v=20260711"></script>
+  <script defer src="lib/manifest.js?v=20260711"></script>
+  <script defer src="main.js?v=20260711"></script>
+</body>
+</html>
