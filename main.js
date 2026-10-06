@@ -137,9 +137,6 @@
             '<h3 class="dish-name">' + escHTML(d.name) + '</h3>' +
             '<p class="dish-ingredients">' + escHTML(d.ingredients) + '</p>' +
             '<p class="dish-desc">' + escHTML(d.description) + '</p>' +
-            '<div class="dish-footer">' +
-              '<span class="eyebrow">Ejemplo · menú del día</span>' +
-            '</div>' +
           '</div>' +
         '</article>'
       );
