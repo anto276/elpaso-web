@@ -122,7 +122,7 @@ input, textarea, select { font: inherit; color: inherit; }
    4. Typography
    ============================================================= */
 h1 { font-size: clamp(2.6rem, 8vw, 6.6rem); }
-h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(2.25rem, 5.6vw, 4rem); }
 h3 { font-size: clamp(1.3rem, 2.6vw, 1.9rem); }
 em, .italic { font-style: italic; }
 
@@ -197,7 +197,9 @@ em, .italic { font-style: italic; }
   align-items: center;
   gap: 2rem;
 }
-@media (min-width: 960px) { .nav-links { display: flex; } }
+/* 7 apartados: la barra completa solo cuando caben holgados; si no, menú de tres rayas */
+@media (min-width: 1100px) { .nav-links { display: flex; gap: 1.3rem; } }
+@media (min-width: 1200px) { .nav-links { gap: 2rem; } }
 .nav-link {
   position: relative;
   font-size: .92rem;
@@ -222,7 +224,7 @@ em, .italic { font-style: italic; }
   display: flex; flex-direction: column; gap: 5px;
   width: 30px; height: 20px; justify-content: center;
 }
-@media (min-width: 960px) { .burger { display: none; } }
+@media (min-width: 1100px) { .burger { display: none; } }
 .burger span {
   display: block; height: 2px; width: 100%; background: var(--ink);
   transition: transform .4s var(--ease-out), opacity .3s var(--ease-out);
@@ -619,7 +621,7 @@ em, .italic { font-style: italic; }
 }
 .carta-head .eyebrow { color: var(--dorado); }
 .carta-head h2 { color: var(--bg); }
-.carta-title { font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1.02; }
+.carta-title { font-size: clamp(2.9rem, 7.6vw, 5.7rem); line-height: 1.02; }
 .menu-banner {
   margin-top: 1.6rem;
   max-width: 44rem;
@@ -822,7 +824,7 @@ textarea.form-field { resize: vertical; min-height: 90px; }
 .panel-value { font-family: var(--display); font-size: 1.15rem; }
 .panel-value a:hover { color: var(--oliva-dark); }
 
-.galeria-title { font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1.02; }
+.galeria-title { font-size: clamp(2.9rem, 7.6vw, 5.7rem); line-height: 1.02; }
 
 /* --- Reseñas (07) --- */
 .section-resenas { background: var(--bg); }
