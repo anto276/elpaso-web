@@ -478,7 +478,13 @@ em, .italic { font-style: italic; }
   font-size: .78rem;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: rgba(246,241,231,0.86);
+  display: inline-block;
+  color: var(--bg);
+  background: var(--oliva-dark);
+  padding: .55rem 1rem;
+  border-radius: 12px;
+  line-height: 1.6;
+  box-shadow: 0 8px 24px -10px rgba(0,0,0,0.5);
   margin-bottom: 1.6rem;
 }
 .hero-title {
