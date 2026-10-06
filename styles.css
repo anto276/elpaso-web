@@ -669,16 +669,24 @@ em, .italic { font-style: italic; }
 .carta-arrow {
   position: absolute; z-index: 5; top: 40%;
   transform: translateY(-50%);
-  width: 3.2rem; height: 3.2rem; border-radius: 50%;
-  border: 0;
-  background: var(--bg); color: var(--ink);
-  font-size: 1.3rem; cursor: pointer;
-  box-shadow: 0 10px 30px -8px rgba(0,0,0,0.55);
-  transition: background .3s, color .3s, opacity .3s, transform .3s var(--ease-out);
+  display: grid; place-items: center;
+  width: 3.4rem; height: 3.4rem; border-radius: 50%;
+  /* cristal esmerilado: transparente y desenfoca lo que hay detrás */
+  background: rgba(46,54,38,0.38);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+  border: 1px solid rgba(246,241,231,0.55);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 28px -10px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.25);
+  transition: background .35s, border-color .35s, color .35s, opacity .3s, transform .35s var(--ease-out);
 }
-.carta-arrow-prev { left: -.6rem; }
-.carta-arrow-next { right: -.6rem; }
-.carta-arrow:hover:not(:disabled) { background: var(--dorado); transform: translateY(-50%) scale(1.08); }
+.carta-arrow svg { transition: transform .35s var(--ease-out); }
+.carta-arrow-prev { left: .8rem; }
+.carta-arrow-next { right: .8rem; }
+.carta-arrow:hover:not(:disabled) { background: rgba(201,163,91,0.55); border-color: var(--dorado); color: #fff; transform: translateY(-50%) scale(1.06); }
+.carta-arrow-prev:hover:not(:disabled) svg { transform: translateX(-2px); }
+.carta-arrow-next:hover:not(:disabled) svg { transform: translateX(2px); }
 .carta-arrow:disabled { opacity: 0; pointer-events: none; }
 .carta-track {
   display: flex;
