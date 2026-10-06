@@ -478,7 +478,7 @@ em, .italic { font-style: italic; }
   font-size: .78rem;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--oliva);
+  color: var(--ink); /* mismo verde oscuro que los botones de Reservar */
   margin-bottom: 1.6rem;
 }
 .hero-title {
