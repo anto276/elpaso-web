@@ -288,6 +288,13 @@
       if (label) label.textContent = String(current).padStart(2, "0") + " / " + String(total).padStart(2, "0");
       if (prev) prev.disabled = wrap.scrollLeft <= 2;
       if (next) next.disabled = wrap.scrollLeft >= max - 2;
+      // Flechas a la altura del centro de la foto
+      var photo = track.querySelector(".dish-photo");
+      if (photo) {
+        var top = photo.offsetTop + photo.offsetHeight / 2;
+        if (prev) prev.style.top = top + "px";
+        if (next) next.style.top = top + "px";
+      }
     }
 
     if (prev) prev.addEventListener("click", function () { go(-1); });

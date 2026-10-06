@@ -664,15 +664,22 @@ em, .italic { font-style: italic; }
 }
 .carta-track-wrap { scrollbar-width: none; }
 .carta-track-wrap::-webkit-scrollbar { display: none; }
+/* Flechas a los lados de las fotos (la altura la ajusta main.js al centro de la foto) */
+.carta-slider { position: relative; }
 .carta-arrow {
-  width: 2.8rem; height: 2.8rem; border-radius: 50%;
-  border: 1px solid rgba(246,241,231,0.35);
-  background: transparent; color: var(--bg);
-  font-size: 1.2rem; cursor: pointer;
-  transition: background .3s, color .3s, border-color .3s, opacity .3s;
+  position: absolute; z-index: 5; top: 40%;
+  transform: translateY(-50%);
+  width: 3.2rem; height: 3.2rem; border-radius: 50%;
+  border: 0;
+  background: var(--bg); color: var(--ink);
+  font-size: 1.3rem; cursor: pointer;
+  box-shadow: 0 10px 30px -8px rgba(0,0,0,0.55);
+  transition: background .3s, color .3s, opacity .3s, transform .3s var(--ease-out);
 }
-.carta-arrow:hover:not(:disabled) { background: var(--dorado); color: var(--ink); border-color: var(--dorado); }
-.carta-arrow:disabled { opacity: .3; cursor: default; }
+.carta-arrow-prev { left: -.6rem; }
+.carta-arrow-next { right: -.6rem; }
+.carta-arrow:hover:not(:disabled) { background: var(--dorado); transform: translateY(-50%) scale(1.08); }
+.carta-arrow:disabled { opacity: 0; pointer-events: none; }
 .carta-track {
   display: flex;
   gap: 1.4rem;
