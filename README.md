@@ -85,3 +85,5 @@ Cambia `https://elpaso-donbenito.pages.dev` por la nueva en `index.html`, `sitem
 Hecha por **Antonio Dorado Fernández** · [LinkedIn](https://www.linkedin.com/in/antonio-dorado-fernandez) · [GitHub](https://github.com/anto276)
 
 Fotos, textos y reseñas pertenecen al Café Bar Restaurante El Paso.
+
+© 2026 Antonio Dorado Fernández. Todos los derechos reservados. Código visible solo como muestra de portfolio; no se permite su uso, copia ni modificación sin permiso.
