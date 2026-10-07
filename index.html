@@ -2,13 +2,52 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-<!-- This site is hosted on Netlify. Anyone can build and deploy a site
-     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=3cfeccd2-3567-47dd-b9f6-1b87ace5396d
-     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Restaurante Café Bar El Paso · Cocina casera en Don Benito</title>
-  <meta name="description" content="Restaurante Café Bar El Paso, cocina casera de toda la vida en Avenida de Madrid 1, Don Benito. Menú del día, comida para llevar que cambia cada día y reserva de mesa por WhatsApp.">
+  <title>Café Bar Restaurante El Paso · Cocina casera en Don Benito</title>
+  <meta name="description" content="Café Bar Restaurante El Paso, cocina casera en Avenida de Madrid 1, Don Benito. Menú del día, comida para llevar que cambia cada día y reserva de mesa por WhatsApp.">
   <meta name="theme-color" content="#F6F1E7">
+
+  <!-- Dirección oficial de la web (si cambia el dominio, cambiar aquí, en sitemap.xml y en robots.txt) -->
+  <link rel="canonical" href="https://elpaso-donbenito.pages.dev/">
+
+  <!-- Vista previa al compartir el enlace (WhatsApp, Facebook...) -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Café Bar Restaurante El Paso · Don Benito">
+  <meta property="og:description" content="Cocina casera, menú del día y comida para llevar en Avenida de Madrid 1, Don Benito.">
+  <meta property="og:url" content="https://elpaso-donbenito.pages.dev/">
+  <meta property="og:image" content="https://elpaso-donbenito.pages.dev/assets/img/hero.webp">
+
+  <!-- Ficha de restaurante para Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Café Bar Restaurante El Paso",
+    "url": "https://elpaso-donbenito.pages.dev/",
+    "image": "https://elpaso-donbenito.pages.dev/assets/img/hero.webp",
+    "telephone": "+34678542278",
+    "servesCuisine": "Cocina casera española",
+    "priceRange": "€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Avenida de Madrid, 1, Bajo",
+      "addressLocality": "Don Benito",
+      "addressRegion": "Badajoz",
+      "postalCode": "06400",
+      "addressCountry": "ES"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 38.9625, "longitude": -5.8568 },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "07:00",
+      "closes": "17:00"
+    }],
+    "acceptsReservations": "True",
+    "sameAs": ["https://instagram.com/elpaso_donbenito"]
+  }
+  </script>
 
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
   <link rel="icon" href="assets/img/favicon.png" sizes="256x256">

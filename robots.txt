@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elpaso-donbenito.pages.dev/sitemap.xml
